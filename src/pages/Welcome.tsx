@@ -1,7 +1,7 @@
 import { PageContainer } from '@ant-design/pro-components';
 import { useModel } from '@umijs/max';
 import { Card, theme } from 'antd';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 /**
  * 每个单独的卡片，为了复用样式抽成了组件
@@ -86,6 +86,22 @@ const InfoCard: React.FC<{
 const Welcome: React.FC = () => {
   const { token } = theme.useToken();
   const { initialState } = useModel('@@initialState');
+
+  // 组件挂载时执行
+  useEffect(() => {
+    console.log('Welcome 组件已挂载');
+
+    // 组件卸载时执行
+    return () => {
+      console.log('Welcome 组件即将卸载');
+    };
+  }, []);
+
+  // 组件更新时执行（监听特定状态变化）
+  useEffect(() => {
+    console.log('Welcome 组件已更新');
+  }, [token, initialState]);
+
   return (
     <PageContainer>
       <Card
