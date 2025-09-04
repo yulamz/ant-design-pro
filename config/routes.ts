@@ -52,6 +52,12 @@ export default [
     component: './table-list',
   },
   {
+    name: 'lifecycle-demo',
+    icon: 'experiment',
+    path: '/lifecycle-demo',
+    component: './LifecycleDemo',
+  },
+  {
     path: '/',
     redirect: '/welcome',
   },
