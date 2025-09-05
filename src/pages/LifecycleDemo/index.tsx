@@ -1,6 +1,7 @@
 import { PageContainer } from '@ant-design/pro-components';
 import { Alert, Card, Divider, Typography } from 'antd';
 import React from 'react';
+import RefsParentComponent from './RefsParentComponent';
 import SimpleParent from './SimpleDemo';
 
 const { Title, Paragraph, Text } = Typography;
@@ -78,6 +79,11 @@ const LifecycleDemo: React.FC = () => {
 
         <Title level={3}>实际演示</Title>
         <SimpleParent />
+
+        <Divider />
+
+        <Title level={3}>Refs 调用子组件方法示例</Title>
+        <RefsParentComponent />
       </Card>
     </PageContainer>
   );
